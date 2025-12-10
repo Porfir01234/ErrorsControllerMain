@@ -34,12 +34,10 @@ public class UsersController {
     @PostMapping("/newUser/{id}")
     public User postUsers(@Valid @RequestBody User user, @PathVariable Long id ) {
 
-        System.out.println("este es el id " + id);
-
         UUID uuidV7 = Generators.timeBasedEpochGenerator().generate();
         user.setUuid(uuidV7);
 
-        if (Objects.equals(user.nombre, "mario")) {
+        if (!Objects.equals(user.nombre, "mario")) {
             users.add(user);
             return user;
         } else {
