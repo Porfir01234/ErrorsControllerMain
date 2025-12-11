@@ -8,6 +8,8 @@ public class Domicilio {
     @Size(min = 3, message = "la calle debe ser mayor que 3 caracteres")
     @NotBlank(message = "la calle no debe estar vacia")
     public String calle;
+    @Size(min = 3, message = "la colonia debe tener mas de 3 caracteres")
+    @NotBlank(message = "la colonia no debe estar vacia")
     public String colonia;
 
     public Domicilio() {}
